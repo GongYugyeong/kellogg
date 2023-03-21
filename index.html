@@ -1,53 +1,174 @@
 <!DOCTYPE html>
-<html lang="ko">  <!-- 영문 en -->
-	<head>
-		<meta charset="UTF-8">
-		<!-- minimum-scale=1 : 최소 크기 설정 (기본값 : 0.25, 범위 : 0~10.0), maximum-scale=1 : 최대 크기 설정(최대 배율 범위 : 0~10.0), user-scalable=no : 사용자 단말의 확대기능 사용 유무 선언(yes/no) -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
-		<!-- 모바일 사파리에서 전화번호 링크 비활성화하기 -->
-		<meta name="format-detection" content="telephone=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="ko">
+  <!-- 영문 en -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- minimum-scale=1 : 최소 크기 설정 (기본값 : 0.25, 범위 : 0~10.0), maximum-scale=1 : 최대 크기 설정(최대 배율 범위 : 0~10.0), user-scalable=no : 사용자 단말의 확대기능 사용 유무 선언(yes/no) -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0" />
+    <!-- 모바일 사파리에서 전화번호 링크 비활성화하기 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="">
-		<meta property="og:title" content="">
-		<meta property="og:image" content="">
-		<meta property="og:description" content="">
-		<meta property="og:site_name" content="">
-		<meta property="og:locale" content="ko_KR">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-		<title>kellogg</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <title>kellogg</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
-		<script src="//code.jquery.com/jquery.min.js"></script>
-		<!-- Google tag (gtag.js) -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5JV7804JK"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5JV7804JK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-			gtag('config', 'G-E5JV7804JK');
-		</script> -->
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="wrap">
-				<div class="container">
-
-					<div id="sec01" class="sec01 section">
-						<div class="cont_wrap">
-              <div class="title"><img src="./assets/images/p_1_title_1.png" alt=""></div>
-              <img src="./assets/images/p_1_img_1.png" alt="" class="content">
-              <a href="javascript:void(0);" class="btn"><img src="./assets/images/p_1_btn_1.png" alt="시작하기"></a>
+      gtag('config', 'G-E5JV7804JK');
+    </script> -->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="wrap">
+        <div class="container">
+          <!-- S: start page -->
+          <div id="sec01" class="section section1">
+            <div class="cont_wrap">
+              <div class="title">
+                <img src="./assets/images/p_1_title_1.png" alt="나에게 맞는 시리얼을 찾아보세요!" />
+              </div>
+              <div class="content">
+                <img src="./assets/images/p_1_img_1.png" alt="시리얼 이미지" />
+              </div>
+              <a href="javascript:void(0);" class="btn"><img src="./assets/images/p_1_btn_1.png" alt="참여하기" /></a>
             </div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-	</body>
+          </div>
+          <!-- E: start page -->
+          <!-- S: question page -->
+          <div id="sec02" class="section question question1">
+            <div class="cont_wrap">
+              <div class="title">
+                <img src="./assets/images/p_2_title_1.png" alt="1. 일주일에 아침을 몇 번 드시나요?" />
+              </div>
+              <div class="btnBox">
+                
+              </div>
+              <div class="btn btn_7" style="display: none;">
+                <input type="checkbox" id="p_3_btn_7" name="p_3_title_1" class="dataChk">
+                <label for="p_3_btn_7"></label>
+              </div>
+            </div>
+          </div>
+          <!-- E: question page -->
+        </div>
+      </div>
+    </div>
+    <script>
+      let page = 0;
+      let clickCnt = 0;
+      let type = '';
+
+      function listData() {
+        $.ajax({
+          type: "get",
+          url: "./assets/api/data.json",
+          dataType: "json",
+          async: true,
+          success: function (data) {
+            let json = eval(data);
+            let jsonData = json.rows[page];
+            let html = '';
+
+            clickCnt = 0;
+            type = jsonData.type;
+
+            console.log(page);
+            
+            $('.question').removeClass('question'+page).addClass('question'+jsonData.idx);
+
+            $('.question .btnBox').empty();
+            $('.question .title img').attr({'src':'./assets/images/'+jsonData.title+'.png','alt':jsonData.Q});
+            
+            $.each(jsonData.data, function (key, state) {
+              
+              if(type === 'single'){
+                html += `<div class="btn btn_${key+1}">
+                    <input type="radio" id="${state.src}" name="${jsonData.title}" class="dataChk">
+                    <label for="${state.src}"></label>
+                  </div>`;
+                }else{
+                  html += `<div class="btn btn_${key+1}">
+                      <input type="checkbox" id="${state.src}" name="${jsonData.title}" class="dataChk">
+                      <label for="${state.src}"></label>
+                    </div>`;
+                }
+            });
+
+            $('.question .btnBox').append(html);
+          },
+          error: function () {
+            console.log("error");
+          },
+        });
+      }
+
+      $(document).ready(function () {
+        listData();
+
+        // 참여하기 버튼 클릭
+        $(document).on("click", ".section .btn", function () {
+          $("#sec01").fadeOut(300);
+        });
+
+        // 질문 답변 클릭
+        $(document).on("click", ".btnBox input", function(){
+          clickCnt = $(".dataChk:checked").length;
+
+          if(type === "single"){
+            page += 1;
+
+            setTimeout(function(){
+              listData();
+            },100);
+          }else{
+            if(clickCnt >= 3){
+              page += 1;
+
+              setTimeout(function(){
+                listData();
+              },100);
+            }else{
+              return;
+            }
+          }
+        });
+
+        // $(document).on("click", ".btn a", function () {
+        //   let src = $(this).attr("class");
+
+        //   if(type === 'single'){
+        //     $('.question .btn a').addClass('off').removeClass('on');
+        //     $(this).addClass('on').removeClass('off');
+
+        //     page += 1;
+
+        //     setTimeout(function(){
+        //       listData();
+        //     },300);
+        //   }else if(type === 'multi'){
+
+        //   }
+        // });
+      }); // End-jQuery
+    </script>
+  </body>
 </html>

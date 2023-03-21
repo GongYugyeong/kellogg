@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "idx": "1",
+      "type": "single",
+      "title": "p_2_title_1",
+      "Q": "일주일에 아침을 몇 번 드시나요?",
+      "data": [
+        {"value": "먹지 않음", "src": "p_2_btn_1"},
+        {"value": "주 1회", "src": "p_2_btn_2"},
+        {"value": "주 2~3회", "src": "p_2_btn_3"},
+        {"value": "주 4회 이상", "src": "p_2_btn_4"}
+      ]
+    },
+    {
+      "idx": "2",
+      "type": "multi",
+      "title": "p_3_title_1",
+      "Q": "아침 식사 메뉴는 주로 무엇인가요?",
+      "data": [
+        {"value": "한식(밥,국,반찬)", "src": "p_3_btn_1"},
+        {"value": "빵/샌드위치", "src": "p_3_btn_2"},
+        {"value": "시리얼", "src": "p_3_btn_3"},
+        {"value": "과일", "src": "p_3_btn_4"},
+        {"value": "우유/요거트", "src": "p_3_btn_5"},
+        {"value": "가정대용식(냉동식품,김밥,밀키트 등", "src": "p_3_btn_6"}
+      ]
+    },
+    {
+      "idx": "3",
+      "type": "multi",
+      "title": "p_4_title_1",
+      "Q": "아침 식사 시 가장 중요하게 생각하는 것은 무엇인가요?",
+      "data": [
+        {"value": "영양", "src": "p_4_btn_1"},
+        {"value": "맛", "src": "p_4_btn_2"},
+        {"value": "편리함", "src": "p_4_btn_3"},
+        {"value": "포만감", "src": "p_4_btn_4"},
+        {"value": "가격", "src": "p_4_btn_5"},
+        {"value": "기타", "src": "p_4_btn_6"}
+      ]
+    },
+    {
+      "idx": "4",
+      "type": "single",
+      "title": "p_5_title_1",
+      "Q": "아침 식사를 보통 혼자 하시나요, 혹은 자녀/가족과 함께 하시나요?",
+      "data": [
+        {"value": "혼자 섭취", "src": "p_5_btn_1"},
+        {"value": "어린이 자녀와 함께 섭취", "src": "p_5_btn_2"},
+        {"value": "청소년 자녀와 함께 섭취", "src": "p_5_btn_3"},
+        {"value": "성인 가족이 함께 섭취 (부부, 룸메이트 등)", "src": "p_5_btn_4"}
+      ]
+    },
+    {
+      "idx": "5",
+      "type": "single",
+      "title": "p_6_title_1",
+      "Q": "시리얼을 주로 어디서 드시나요?",
+      "data": [
+        {"value": "집에서", "src": "p_6_btn_1"},
+        {"value": "학교에서", "src": "p_6_btn_2"},
+        {"value": "직장에서", "src": "p_6_btn_3"},
+        {"value": "외부에서 (등산, 소풍 등)", "src": "p_6_btn_4"}
+      ]
+    }
+  ]
+}
